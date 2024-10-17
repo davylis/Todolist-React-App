@@ -47,7 +47,11 @@ function Todolist() {
       alert("Select a row first!");
     }
   };
-  //ask about color
+
+  const handleClear = () => {
+    setTodos([]); // Clear all todos
+  };
+  
   const handleDateChange = (date) => {
     setTodo({ ...todo, duedate: dayjs(date).toISOString().substring(0, 10) });
   };
@@ -63,7 +67,6 @@ function Todolist() {
         mt={2}
       >
         <TextField
-          variant="standard"
           label="Description"
           value={todo.description}
           onChange={(event) =>
@@ -71,19 +74,10 @@ function Todolist() {
           }
         />
         <TextField
-          variant="standard"
           label="Priority"
           value={todo.priority}
           onChange={(event) =>
             setTodo({ ...todo, priority: event.target.value })
-          }
-        />
-        <TextField
-          variant="standard"
-          label="date"
-          value={todo.duedate}
-          onChange={(event) =>
-            setTodo({ ...todo, duedate: event.target.value })
           }
         />
         <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -104,6 +98,13 @@ function Todolist() {
           onClick={handleDelete}
         >
           Delete
+        </Button>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={handleClear}
+        >
+          Clear Todos
         </Button>
       </Stack>
       <div
