@@ -2,6 +2,7 @@
   "name": "todolistbite",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://davylis.github.io/Todolist-React-App/",
   "type": "module",
   "scripts": {
     "test": "vitest",
@@ -21,7 +22,6 @@
     "@mui/material": "^6.1.2",
     "@mui/x-date-pickers": "^7.19.0",
     "ag-grid-react": "^32.1.0",
-    "homepage": "https://davylis.github.io/Todolist-React-App/",
     "dayjs": "^1.11.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
